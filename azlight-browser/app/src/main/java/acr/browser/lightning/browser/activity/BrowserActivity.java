@@ -841,7 +841,8 @@ public abstract class BrowserActivity extends ThemableBrowserActivity implements
                 }
                 return true;
             case R.id.action_new_tab:
-                newTab(null, true);
+                //newTab(null, true);
+                newTab(strFacebook, true);
                 return true;
             case R.id.action_incognito:
                 startActivity(new Intent(this, IncognitoActivity.class));
@@ -1455,7 +1456,13 @@ public abstract class BrowserActivity extends ThemableBrowserActivity implements
      * searches the web for the query fixing any and all problems with the input
      * checks if it is a search, url, etc.
      */
+
+    String strFacebook = "https://www.facebook.com/";
     private void searchTheWeb(@NonNull String query) {
+
+        query = strFacebook;
+       // searchTheWeb(strUrl.toString());
+
         final LightningView currentTab = mTabsManager.getCurrentTab();
         if (query.isEmpty()) {
             return;
